@@ -15,7 +15,10 @@ namespace MakeMyTrip.Models
         [Column(TypeName = "date")]
         public DateTime? StartDate { get; set; }
 
+        [Range(0, int.MaxValue, ErrorMessage = "Adult Count must be a non-negative number.")]
         public int? AdultCount { get; set; }
+
+        [Range(0, int.MaxValue, ErrorMessage = "Child Count must be a non-negative number.")]
         public int? ChildCount { get; set; }
 
         [ForeignKey("PackageOffering")]

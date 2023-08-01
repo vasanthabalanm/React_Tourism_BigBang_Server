@@ -6,13 +6,13 @@ namespace MakeMyTrip.Models
     public class Spot
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int? SpotId { get; set; }
 
         public string? SpotLocation { get; set; }
 
-        [ForeignKey("PackageOffering")]
-        public int? PackageID { get; set; }
+        [ForeignKey("Speciality")]
+        public int? SpecialtyId { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
         public string? ImageName { get; set; }
@@ -22,5 +22,6 @@ namespace MakeMyTrip.Models
 
         [NotMapped]
         public string? ImageSrc { get; set; }
+
     }
 }

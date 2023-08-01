@@ -6,21 +6,20 @@ namespace MakeMyTrip.Models
     public class AdminImageGallery
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AdminImgsId { get; set; }
 
-        [ForeignKey("Admin_User")]
-        public int? Id { get; set; }
-
-        [Column(TypeName = "nvarchar(50)")]
+        [Required]
         public string? LocationName { get; set; }
 
-        [Column(TypeName = "nvarchar(50)")]
+        [Required]
         public string? Locationdescription { get; set; }
 
-        [Column(TypeName = "nvarchar(100)")]
+        [Required]
         public string? ImageName { get; set; }
 
         [NotMapped]
+        [Required(ErrorMessage = "Image File is required.")]
         public IFormFile? ImageFile { get; set; }
 
         [NotMapped]

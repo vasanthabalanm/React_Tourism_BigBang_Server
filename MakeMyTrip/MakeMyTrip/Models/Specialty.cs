@@ -6,14 +6,11 @@ namespace MakeMyTrip.Models
     public class Specialty
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int? SpecialtyId { get; set; }
 
-        [ForeignKey("Spot")]
-        public int? SpotId { get; set; }
-
+        [Required]
         public string? SpecialtyLocation { get; set; }
-
         public string? WhatSpecial { get; set; }
         public string? ImageName { get; set; }
 
@@ -22,5 +19,8 @@ namespace MakeMyTrip.Models
 
         [NotMapped]
         public string? ImageSrc { get; set; }
+        public ICollection<PackageOffering>? PackageOfferings { get; set; }
+        public ICollection<Spot>? Spots { get; set; } 
+
     }
 }
