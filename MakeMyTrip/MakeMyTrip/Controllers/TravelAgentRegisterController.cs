@@ -1,6 +1,11 @@
-﻿namespace MakeMyTrip.Controllers
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace MakeMyTrip.Controllers
 {
-    public class TravelAgentRegister
+    [Route("api/[controller]")]
+    [ApiController]
+    public class TravelAgentRegisterController : ControllerBase
     {
     }
 }
