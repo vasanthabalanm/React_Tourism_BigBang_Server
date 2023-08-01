@@ -14,6 +14,9 @@ namespace MakeMyTrip.Data
         public DbSet<Specialty> Specialty { get; set; }
         public DbSet<Spot> Spot { get; set; }
         public DbSet<Transaction> Transaction { get; set; }
+        public DbSet<AdminImageGallery> AdminImageGallery { get; set; }
+        public DbSet<TravelAgent> TravelAgent { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
