@@ -20,7 +20,7 @@ namespace MakeMyTrip.Models
 
         [Required]
         public string? In_Out_India { get; set; }
-        public string? ImageName { get; set; }
+    
 
         [Required]
         public string? PricePerPerson { get; set; }
@@ -44,13 +44,6 @@ namespace MakeMyTrip.Models
 
         [ForeignKey("Hotel")]
         public int? HotelId { get; set; }
-
-        [NotMapped]
-        public IFormFile? ImageFile { get; set; }
-
-        [NotMapped]
-        public string? ImageSrc { get; set; }
-
         public ICollection<Book>? Booking { get; set; } = new List<Book>();
 
     }
