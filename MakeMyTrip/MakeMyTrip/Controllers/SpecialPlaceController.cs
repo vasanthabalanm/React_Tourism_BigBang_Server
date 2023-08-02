@@ -7,5 +7,6 @@ namespace MakeMyTrip.Controllers
     [ApiController]
     public class SpecialPlaceController : ControllerBase
     {
+
     }
 }

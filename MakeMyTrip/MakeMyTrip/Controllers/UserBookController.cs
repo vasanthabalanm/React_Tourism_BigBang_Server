@@ -32,7 +32,7 @@ namespace MakeMyTrip.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<List<Booking>>> PostBookings(Booking booking)
+        public async Task<ActionResult<List<Book>>> PostBookings(Book booking)
         {
             try
             {
