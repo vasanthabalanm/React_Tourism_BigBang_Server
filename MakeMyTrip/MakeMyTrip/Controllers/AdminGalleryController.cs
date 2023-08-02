@@ -9,9 +9,9 @@ namespace MakeMyTrip.Controllers
     [ApiController]
     public class AdminGalleryController : ControllerBase
     {
-        private readonly IAdminImageGallery _gallery;
+        private readonly IAdminallImages _gallery;
 
-        public AdminGalleryController(IAdminImageGallery gallery)
+        public AdminGalleryController(IAdminallImages gallery)
         {
             _gallery = gallery;
         }
