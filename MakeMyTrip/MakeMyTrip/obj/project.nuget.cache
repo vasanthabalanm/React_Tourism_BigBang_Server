@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MnYOihlu8X5CAhAhu7IbbJcucwSagtLO0wN9kHZZWay0wpMnruhygnZckIxBEFOj0cj3tDhTyFjH+qfnqQSuwg==",
+  "dgSpecHash": "25m/2S9zKx43QeHb4bW9SoqxK9TcFlme+0YdN3Z3TaY1evxx1ITmm7/2eBoT78b06hYugtWEef9Z1+72+DbOfA==",
   "success": true,
   "projectFilePath": "D:\\React_tourism_Server\\React_Tourism_BigBang_Server\\MakeMyTrip\\MakeMyTrip\\MakeMyTrip.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\serilog\\3.0.1\\serilog.3.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
