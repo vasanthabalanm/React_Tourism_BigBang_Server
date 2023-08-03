@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MakeMyTrip.Migrations
 {
     /// <inheritdoc />
-    public partial class BigbangTour : Migration
+    public partial class Maketrips : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -78,7 +78,7 @@ namespace MakeMyTrip.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     SpecialtyLocation = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     WhatSpecial = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImageName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ImageName = table.Column<string>(type: "nvarchar(100)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -106,21 +106,21 @@ namespace MakeMyTrip.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AdminImageGallery",
+                name: "AdminImagecheck",
                 columns: table => new
                 {
                     AdminImgsId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LocationName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Locationdescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageName = table.Column<string>(type: "nvarchar(100)", nullable: true),
                     Admin_UserId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AdminImageGallery", x => x.AdminImgsId);
+                    table.PrimaryKey("PK_AdminImagecheck", x => x.AdminImgsId);
                     table.ForeignKey(
-                        name: "FK_AdminImageGallery_Admin_s_Admin_UserId",
+                        name: "FK_AdminImagecheck_Admin_s_Admin_UserId",
                         column: x => x.Admin_UserId,
                         principalTable: "Admin_s",
                         principalColumn: "Id");
@@ -238,8 +238,8 @@ namespace MakeMyTrip.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AdminImageGallery_Admin_UserId",
-                table: "AdminImageGallery",
+                name: "IX_AdminImagecheck_Admin_UserId",
+                table: "AdminImagecheck",
                 column: "Admin_UserId");
 
             migrationBuilder.CreateIndex(
@@ -282,7 +282,7 @@ namespace MakeMyTrip.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AdminImageGallery");
+                name: "AdminImagecheck");
 
             migrationBuilder.DropTable(
                 name: "Feedbacks");

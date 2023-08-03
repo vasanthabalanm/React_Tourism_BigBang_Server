@@ -34,8 +34,7 @@ namespace MakeMyTrip.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ImageName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("LocationName")
                         .IsRequired()
@@ -49,7 +48,7 @@ namespace MakeMyTrip.Migrations
 
                     b.HasIndex("Admin_UserId");
 
-                    b.ToTable("AdminImageGallery");
+                    b.ToTable("AdminImagecheck");
                 });
 
             modelBuilder.Entity("MakeMyTrip.Models.Admin_User", b =>
@@ -289,7 +288,7 @@ namespace MakeMyTrip.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("SpecialtyId"));
 
                     b.Property<string>("ImageName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("SpecialtyLocation")
                         .IsRequired()
