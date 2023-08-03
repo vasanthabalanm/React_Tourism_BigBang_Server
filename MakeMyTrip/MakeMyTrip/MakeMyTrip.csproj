@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\AdminListGallery\" />
+    <Folder Include="Images\AdminAllImages\" />
     <Folder Include="Repository\AllHotels\" />
   </ItemGroup>
 
