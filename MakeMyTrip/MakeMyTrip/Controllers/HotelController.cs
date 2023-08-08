@@ -66,27 +66,7 @@ namespace MakeMyTrip.Controllers
                 .ToListAsync();
         }
 
-        /*[HttpGet]
-        public ActionResult<IEnumerable<AdminImageGallery>> GetAllImages()
-        {
-            string imageFolderPath = Path.Combine(_hostEnvironment.ContentRootPath, "Images/Samplecheck");
-            string[] imageFiles = Directory.GetFiles(imageFolderPath);
-
-            var imageList = imageFiles.Select(imageFilePath =>
-            {
-                var imageName = Path.GetFileName(imageFilePath);
-                return new AdminImageGallery()
-                {
-                    AdminImgsId = 0, // You may want to set this based on your requirements
-                    LocationName = "", // You may want to set this based on your requirements
-                    Locationdescription = "", // You may want to set this based on your requirements
-                    ImageName = imageName,
-                    ImageSrc = String.Format("{0}://{1}{2}/Images/Samplecheck/{3}", Request.Scheme, Request.Host, Request.PathBase, imageName)
-                };
-            });
-
-            return imageList.ToList();
-        }*/
+       
 
         //to update the images with details
         [HttpPut("{id}")]

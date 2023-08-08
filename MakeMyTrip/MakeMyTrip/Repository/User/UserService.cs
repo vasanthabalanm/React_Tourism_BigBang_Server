@@ -103,7 +103,8 @@ namespace MakeMyTrip.Repository.User
             {
                 AccessToken = newAccessToken,
                 RefreshToken = newRefreshToken,
-                Role = user.Role
+                Role = user.Role,
+                Id = user.Id
             });
         }
 
@@ -169,7 +170,8 @@ namespace MakeMyTrip.Repository.User
             {
                 AccessToken = newAccessToken,
                 RefreshToken = newRefreshToken,
-                Role = user.Role
+                Role = user.Role,
+                Id = user.Id
 
             });
         }
@@ -201,13 +203,26 @@ namespace MakeMyTrip.Repository.User
             return await _context.Admin_s.ToListAsync();
         }
 
-        public async Task<ActionResult<List<TravelAgent>>> DeleteTravelAgent(int id)
+        public async Task<ActionResult<List<Admin_User>>> Deleteusers(int id)
         {
-            var details = _context.TravelAgent.Find(id);
+            var details = _context.Admin_s.Find(id);
             _context.Remove(details);
             await _context.SaveChangesAsync();
-            return await _context.TravelAgent.ToListAsync();
+            return await _context.Admin_s.ToListAsync();
 
         }
+
+        // Filter by role 'TravelAgent'
+        public async Task<List<Admin_User>> Getallapprovedagent()
+        {
+            return await _context.Admin_s.Where(user => user.Role == "TravelAgent") .ToListAsync();
+        }
+
+        //filter by holiday package
+        public async Task<List<PackageOffering>> Getholidaydet()
+        {
+            return await _context.PackageOffering.Where(packages => packages.OfferType == "Holiday").ToListAsync();
+        }
+
     }
 }

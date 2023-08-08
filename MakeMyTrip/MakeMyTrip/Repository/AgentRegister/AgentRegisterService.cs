@@ -74,6 +74,15 @@ namespace MakeMyTrip.Repository.AgentRegister
             return details;
         }
 
+        public async Task<ActionResult<List<TravelAgent>>> DeleteTravelAgent(int id)
+        {
+            var details = _contexts.TravelAgent.Find(id);
+            _contexts.Remove(details);
+            await _contexts.SaveChangesAsync();
+            return await _contexts.TravelAgent.ToListAsync();
+
+        }
+
 
 
     }

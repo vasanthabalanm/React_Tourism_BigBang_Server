@@ -9,8 +9,6 @@ namespace MakeMyTrip.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int? Id { get; set; }
 
-       
-        [RegularExpression(@"^[a-zA-Z]+$")]
         public string? Username { get; set; }
 
         [Required]
@@ -25,12 +23,12 @@ namespace MakeMyTrip.Models
         [RegularExpression(@"^[0-9]+$")]
         public long? Phone { get; set; }
 
-        [RegularExpression(@"^[a-zA-Z]+$")]
+        
         public string? AgencyName { get; set; }
 
         public string? AgencyDescription { get; set; }
 
-        [RegularExpression(@"^[0-9]+$")]
+       
         public long? Aadharnumber { get; set; }
         public string? RefreshToken { get; set; }
         public DateTime RefreshTokenExpiryTime { get; set; }

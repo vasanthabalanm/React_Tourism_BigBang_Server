@@ -43,5 +43,18 @@ namespace MakeMyTrip.Controllers
                 return null;
             }
         }
+
+        [HttpGet("GetAllIntrest")]
+        public async Task<ActionResult<List<PackageOffering>>> GetIntrestedPackages(string offertype, string destination, string vehicletype)
+        {
+            try
+            {
+                return await _context.GetIntrestedPackages(offertype, destination, vehicletype);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

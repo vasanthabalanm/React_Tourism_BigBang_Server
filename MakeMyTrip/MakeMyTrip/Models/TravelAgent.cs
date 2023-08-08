@@ -18,7 +18,7 @@ namespace MakeMyTrip.Models
         public string? Password { get; set; }
 
         [Required(ErrorMessage = "Aadhar number is required.")]
-        [RegularExpression(@"^\d{4}\s\d{4}\s\d{4}$", ErrorMessage = "Invalid Aadhar number format.")]
+        [RegularExpression(@"^\d{12}$", ErrorMessage = "Invalid Aadhar number format.")]
         public string? Aadharnumber { get; set; }
 
         public string? Role { get; set; }

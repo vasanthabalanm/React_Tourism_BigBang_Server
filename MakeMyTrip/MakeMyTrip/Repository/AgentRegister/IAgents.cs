@@ -7,6 +7,8 @@ namespace MakeMyTrip.Repository.AgentRegister
     {
         Task<ActionResult> AddAgent(TravelAgent trvlagnt);
         Task<ActionResult<List<TravelAgent>>> GetAllTravelAgentRequest();
+        Task<ActionResult<List<TravelAgent>>> DeleteTravelAgent(int id);
+
 
     }
 }

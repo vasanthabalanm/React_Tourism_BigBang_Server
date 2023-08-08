@@ -1,4 +1,5 @@
 ﻿using MakeMyTrip.Data;
+using MakeMyTrip.GlobalErrorCheck;
 using MakeMyTrip.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,9 +22,19 @@ namespace MakeMyTrip.Repository.Packages
 
         public async Task<List<PackageOffering>> PostPackages(PackageOffering package)
         {
-            var details = _context.Add(package);
-            _context.SaveChangesAsync();
+            _context.Add(package);
+            await _context.SaveChangesAsync();
             return await _context.PackageOffering.ToListAsync();
+        }
+
+        public async Task<ActionResult<List<PackageOffering>>> GetIntrestedPackages(string offertype, string destination, string vehicletype)
+        {
+            var details = await _context.PackageOffering.Where(x => x.OfferType == offertype && x.Destination == destination && x.VehicleType == vehicletype).ToListAsync();
+            if (details == null)
+            {
+                throw new Exception(GlobalErrcheck.ExceptionMessages["Empty"]);
+            }
+            return details;
         }
     }
 }

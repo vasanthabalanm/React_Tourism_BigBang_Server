@@ -1,6 +1,7 @@
 ﻿using MakeMyTrip.Models;
 using MakeMyTrip.Models.TokenDto;
 using MakeMyTrip.Repository.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -39,7 +40,7 @@ namespace MakeMyTrip.Controllers
             {
                 return await _users.Authenticate(userObj);
             }
-            catch 
+            catch
             {
                 // Return a generic error response to the client
                 return StatusCode(500, new { Message = "An error occurred while authenticating the user. Please try again later." });
@@ -68,16 +69,31 @@ namespace MakeMyTrip.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<List<TravelAgent>>> DeleteTravelAgent(int id)
+        public async Task<ActionResult<List<Admin_User>>> DeleteUsers(int id)
         {
             try
             {
-                return await _users.DeleteTravelAgent(id);
+                return await _users.Deleteusers(id);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+
+        [HttpGet("approvedAgent")]
+        public async Task<ActionResult<List<Admin_User>>> Getallapprovedagent()
+        {
+            var approvedAgents = await _users.Getallapprovedagent();
+            return Ok(approvedAgents);
+        }
+
+        [HttpGet("holidaypack")]
+        public async Task<ActionResult<List<PackageOffering>>> Getholidaydet()
+        {
+            var holidaypk = await _users.Getholidaydet();
+            return Ok(holidaypk);
         }
 
     }

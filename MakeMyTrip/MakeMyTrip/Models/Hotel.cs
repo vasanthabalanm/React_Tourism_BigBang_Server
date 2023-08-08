@@ -35,7 +35,6 @@ namespace MakeMyTrip.Models
 
         [NotMapped]
         [Required(ErrorMessage = "Image file is required.")]
-        [FileExtensions(Extensions = ".jpg,.jpeg,.png,.gif", ErrorMessage = "Invalid image format.")]
         public IFormFile? ImageFile { get; set; }
 
         [NotMapped]

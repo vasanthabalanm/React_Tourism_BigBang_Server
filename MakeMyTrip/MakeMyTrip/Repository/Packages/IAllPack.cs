@@ -7,5 +7,8 @@ namespace MakeMyTrip.Repository.Packages
     {
         Task<ActionResult<List<PackageOffering>>> GetAllPackages();
         Task<List<PackageOffering>> PostPackages(PackageOffering package);
+        Task<ActionResult<List<PackageOffering>>> GetIntrestedPackages(string offertype, string destination, string vehicletype);
+
+        
     }
 }
